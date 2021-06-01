@@ -1,4 +1,4 @@
-const numeroAleatorio = Math.floor(Math.random() * 11);
+const numeroAleatorio = Math.ceil(Math.random() * 10);
 console.log(numeroAleatorio);
 const numeroRecibido = document.querySelector(".numero");
 const adivina = document.querySelector(".adivinar");
