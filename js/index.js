@@ -4,8 +4,12 @@ const numeroRecibido = document.querySelector(".numero");
 const adivina = document.querySelector(".adivinar");
 const mensaje = document.querySelector(".mensaje");
 adivina.addEventListener("click", (e) => {
+  const numeroRecibidoIntegro = numeroRecibido.valueAsNumber;
   e.preventDefault();
-  if (+numeroRecibido.value === +numeroAleatorio) {
+  if (isNaN(numeroRecibidoIntegro)) {
+    return;
+  }
+  if (numeroRecibidoIntegro === +numeroAleatorio) {
     mensaje.classList.add("acierto");
     adivina.disabled = true;
     numeroRecibido.disabled = true;
@@ -13,7 +17,7 @@ adivina.addEventListener("click", (e) => {
   } else {
     mensaje.classList.add("error");
     e =
-      +numeroRecibido.value > +numeroAleatorio
+      numeroRecibidoIntegro > +numeroAleatorio
         ? (mensaje.textContent = `el numero es menor de ${numeroRecibido.value} `)
         : (mensaje.textContent = `el numero es mayor de ${numeroRecibido.value} `);
   }
