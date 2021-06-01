@@ -4,7 +4,7 @@ const numeroRecibido = document.querySelector(".numero");
 const adivina = document.querySelector(".adivinar");
 const mensaje = document.querySelector(".mensaje");
 adivina.addEventListener("click", (e) => {
-  console.log(numeroRecibido.value);
+  e.preventDefault();
   if (+numeroRecibido.value === +numeroAleatorio) {
     mensaje.classList.add("acierto");
     adivina.disabled = true;
