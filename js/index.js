@@ -6,8 +6,9 @@ const mensaje = document.querySelector(".mensaje");
 adivina.addEventListener("click", (e) => {
   console.log(numeroRecibido.value);
   if (+numeroRecibido.value === +numeroAleatorio) {
-    adivina.classList.add("acierto");
+    mensaje.classList.add("acierto");
     adivina.disabled = true;
+    numeroRecibido.disabled = true;
     mensaje.textContent = "acertado";
   } else {
     e =
