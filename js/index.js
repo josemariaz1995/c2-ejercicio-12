@@ -11,6 +11,7 @@ adivina.addEventListener("click", (e) => {
     numeroRecibido.disabled = true;
     mensaje.textContent = "acertado";
   } else {
+    mensaje.classList.add("error");
     e =
       +numeroRecibido.value > +numeroAleatorio
         ? (mensaje.textContent = `el numero es menor de ${numeroRecibido.value} `)
